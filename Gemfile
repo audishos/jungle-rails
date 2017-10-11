@@ -42,7 +42,7 @@ gem 'faker'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # gem 'quiet_assets'
+  # gem 'quiet_assets' # depercated in Rails 5
   gem 'sprockets-rails'
   gem 'dotenv-rails'
 end
