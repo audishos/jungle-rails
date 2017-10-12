@@ -29,6 +29,12 @@
     <div class="col-sm-8 col-sm-offset-4">
       <h2>Reviews</h2>
       <hr>
+
+      <%= form_for [@product, @review] do |f| %>
+        Description: <%= f.text_field :description %>
+        Rating: <%= f.select :rating, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
+      <% end %>
+
       <% if !@product.reviews.empty? %>
         <% @product.reviews.each do |review| %>
           <%= render 'review', review: review %>
