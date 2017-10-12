@@ -26,6 +26,14 @@
       </div>
     </div>
 
+    <div class="col-sm-8">
+      <h2>Reviews</h2>
+      <hr>
+      <% @product.reviews.each do |review| %>
+        <%= render 'review', review: review %>
+      <% end %>
+    </div>
+
   </article>
 
 </section>
