@@ -45,6 +45,9 @@ group :development, :test do
   # gem 'quiet_assets' # depercated in Rails 5
   gem 'sprockets-rails'
   gem 'dotenv-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
 end
 
 group :development do
