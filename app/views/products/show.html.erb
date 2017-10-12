@@ -26,11 +26,15 @@
       </div>
     </div>
 
-    <div class="col-sm-8">
+    <div class="col-sm-8 col-sm-offset-4">
       <h2>Reviews</h2>
       <hr>
-      <% @product.reviews.each do |review| %>
-        <%= render 'review', review: review %>
+      <% if !@product.reviews.empty? %>
+        <% @product.reviews.each do |review| %>
+          <%= render 'review', review: review %>
+        <% end %>
+      <% else %>
+        <p>There are no reviews for this item yet!</p>
       <% end %>
     </div>
 

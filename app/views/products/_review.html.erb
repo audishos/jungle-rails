@@ -1,3 +1,11 @@
-<p><%= review.user.first_name %> <%= review.user.last_name %></p>
-<p><%= review.description %></p>
-<p><%= review.rating %></p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Reviewer: <%= review.user.first_name %> <%= review.user.last_name %></h3>
+  </div>
+  <div class="panel-body">
+      <%= review.description %>
+  </div>
+  <div class="panel-footer">
+      Rating: <%= review.rating %>
+  </div>
+</div>
