@@ -7,8 +7,9 @@
   </div>
   <div class="panel-footer">
       Rating: <%= review.rating %>
-      <% if review.user_id == current_user.id %>
-        DELETE
+      <% if current_user && review.user_id == current_user.id %>
+        <%= link_to (fa_icon 'trash-o', class: 'pull-right'), product_review_path(@product, review),
+        data: {:confirm => 'Are you sure?'}, :method => :delete %>
       <% end %>
   </div>
 </div>

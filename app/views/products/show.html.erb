@@ -29,8 +29,7 @@
     <div class="col-sm-8 col-sm-offset-4">
       <h2>Reviews</h2>
       <hr>
-
-      <% if current_user %>
+      <% if current_user && !@review.persisted? %>
         <%= form_for [@product, @review] do |f| %>
         <h4>Write a review!</h4>
           <div class="form-group">
@@ -45,6 +44,8 @@
             <%= f.submit 'submit', class: 'btn btn-primary' %>
           </div>
         <% end %>
+      <% elsif current_user %>
+        <h4>You have already submitted a review. Thanks!</h4>
       <% else %>
         <h4>Please login to write a review</h4>
       <% end %>
