@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 5.1 for purposes of teaching Rails by example. This fork has been upgraded to use Rails 5.1 (the original uses v4.2) and has had some [additional features](#added-features) added.
 
 
 ## Setup
@@ -23,6 +23,24 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Dependencies
 
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
+* Rails 5.1 [Rails Guide](http://guides.rubyonrails.org/v5.1/)
 * PostgreSQL 9.x
 * Stripe
+
+<a name="added-features"></a>
+## Added Features
+
+* Sold out badge displayed for items that are out of stock
+* Admin credentials required to access admin routes
+* Admins can add and remove categories
+* User accounts give users the ability to register and login
+* Product ratings allow users to leave product reviews and anyone to see these reviews
+* Order details page enhance to show order summary
+* Order summary email sent (mocked) upon successful order checkout
+* Users cannot checkout when their cart is empty
+
+## Screenshots
+
+![home page](./screenshots/home.png)
+![product details](./screenshots/product.png)
+![order summary](./screenshots/order_summary.png)

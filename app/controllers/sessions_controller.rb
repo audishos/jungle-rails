@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    @errors = errors || nil
   end
 
   def create
