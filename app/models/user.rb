@@ -4,4 +4,6 @@ class User < ApplicationRecord
 
   has_many :reviews
 
+  validates :email, uniqueness: true
+
 end
