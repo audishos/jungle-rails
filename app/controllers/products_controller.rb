@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find params[:id]
     @review = @product.reviews.find_by(user_id: current_user) || Review.new
-    # @review = Review.new
   end
 
 end
