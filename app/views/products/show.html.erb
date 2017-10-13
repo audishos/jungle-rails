@@ -30,13 +30,27 @@
       <h2>Reviews</h2>
       <hr>
 
-      <%= form_for [@product, @review] do |f| %>
-        Description: <%= f.text_field :description %>
-        Rating: <%= f.select :rating, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] %>
+      <% if current_user %>
+        <%= form_for [@product, @review] do |f| %>
+        <h4>Write a review!</h4>
+          <div class="form-group">
+            <label for="review_description">Description</label>
+            <%= f.text_area :description, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <label for="review_rating">Rating</label>
+            <%= f.select :rating, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].reverse, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.submit 'submit', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      <% else %>
+        <h4>Please login to write a review</h4>
       <% end %>
 
       <% if !@product.reviews.empty? %>
-        <% @product.reviews.each do |review| %>
+        <% @product.reviews.reverse.each do |review| %>
           <%= render 'review', review: review %>
         <% end %>
       <% else %>
