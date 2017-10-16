@@ -30,7 +30,7 @@ gem 'puma'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-rails'
-gem 'money-rails'
+gem 'money-rails', '= 1.9.0'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'stripe'
