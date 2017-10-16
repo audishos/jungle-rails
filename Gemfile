@@ -48,8 +48,13 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem "letter_opener"
+  gem 'letter_opener'
   gem 'rspec-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner'
 end
 
 group :development do
