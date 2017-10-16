@@ -51,7 +51,7 @@ RSpec.describe User, type: :model do
 
     it 'should return the user john@example.com' do
       user = User.authenticate_with_credentials('john@example.com', 'correctpassword')
-      expect(user.email).to eq('john@example.com')
+      expect(user).to eq(@user)
     end
 
     it 'should return nil' do
@@ -61,12 +61,12 @@ RSpec.describe User, type: :model do
 
     it 'should return the user john@example.com' do
       user = User.authenticate_with_credentials('   john@example.com   ', 'correctpassword')
-      expect(user.email).to eq('john@example.com')
+      expect(user).to eq(@user)
     end
 
     it 'should return the user john@example.com' do
       user = User.authenticate_with_credentials('jOhN@exaMplE.cOM', 'correctpassword')
-      expect(user.email).to eq('john@example.com')
+      expect(user).to eq(@user)
     end
 
   end
