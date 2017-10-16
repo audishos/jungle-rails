@@ -132,19 +132,25 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+puts 'Re-creating Users ...'
+
 user1 = User.create!({
   first_name: 'John',
   last_name: 'Smith',
   email: 'john@example.com',
-  password_digest: BCrypt::Password.create("1234")
+  password: '12345678',
+  password_confirmation: '12345678'
 })
 
 user2 = User.create!({
   first_name: 'Jane',
   last_name: 'Smith',
   email: 'jane@example.com',
-  password_digest: BCrypt::Password.create("1234")
+  password: '12345678',
+  password_confirmation: '12345678'
 })
+
+puts 'Re-creating Product Reviews ...'
 
 user1.reviews.create!({
   product_id: 1,
